@@ -1,3 +1,4 @@
+/*
 var w6 = new Dice(6),
     w20 = new Dice(20),
     attributes = {};
@@ -69,6 +70,7 @@ function importRules(string){
     console.log(parseString(value));
   })
 }
+*/
 //console.log(parseString("w20"));
 //console.log(parseString("1w20"));
 //console.log(parseString("2w20"));
@@ -87,9 +89,17 @@ function importRules(string){
 //console.log(parseString("KO:3w6"));
 //console.log(parseString("MA:3w6"));
 
-console.log("parser");
-importRules("ST:3w6;KO:3w6;MA:3w6;GE:3w6;ER:3w6;GR:2w6+6;IN:2w6+6;BI:3w6+3;gS:MAx5;Idee:INx5;Glueck:MAx5;Schadensbonus:ST+GR;Magiepunkte:MAx1;Trefferpunkte:KO+GR/2;Stabilitaetspunkte:MAx5");
+//console.log("parser");
+//importRules("ST:3w6;KO:3w6;MA:3w6;GE:3w6;ER:3w6;GR:2w6+6;IN:2w6+6;BI:3w6+3;gS:MAx5;Idee:INx5;Glueck:MAx5;Schadensbonus:ST+GR;Magiepunkte:MAx1;Trefferpunkte:KO+GR/2;Stabilitaetspunkte:MAx5");
 
-for(item in attributes){
-  document.write(item + ": " +  attributes[item] + "<br/>");
-}
+
+//importRules("ST:3w6;KO:3w6;MA:3w6;GE:3w6;ER:3w6;GR:2w6+6;IN:2w6+6;BI:3w6+3;gS:MAx5;Idee:INx5;Glueck:MAx5;Schadensbonus:ST+GR;Magiepunkte:MAx1;Trefferpunkte:KO+GR/2;Stabilitaetspunkte:MAx5");
+
+var element = document.querySelector(".console"),
+  generate = function(){
+    var app = new App("ST:3w6;KO:3w6;MA:3w6;GE:3w6;ER:3w6;GR:2w6+6;IN:2w6+6;BI:3w6+3;gS:MAx5;Idee:INx5;Glueck:MAx5;Schadensbonus:ST+GR;Magiepunkte:MAx1;Trefferpunkte:KO+GR/2;Stabilitaetspunkte:MAx5", element);
+    app.toString();
+  },
+  button = document.querySelector('#generate');
+
+button.addEventListener('click', generate);
